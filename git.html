@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Git & github</h2>
+    <p>version de git -> git -v</p>
+    <p>
+      --global -> esta es la configuracion global, configuracion para todas las
+      carpetas y el sistema
+    </p>
+    <p>git config --global user.name "José Navas"</p>
+    <p>git config --global user.email joming11@hotmail.com</p>
+    <p>
+      git config --global user.ui true -> para activar colores en la terminal de
+      bash
+    </p>
+    <p>git config --list muestra la configuracion global</p>
+    <p>
+      git config --global core.editor "code --wait" -> define code como editor
+      por defecto, --wait hace que no se pueda seguir ejecutando ningun comando
+      hasta configurar o cerrar el editor
+    </p>
+    <p>
+      git config --global -e -> se usa para abrir el archivo de configuracion a
+      traves del editor
+    </p>
+    <p>git config --global core.autocrlf true para windows</p>
+    <p>git config --global core.autocrlf input para mac y linux</p>
+    <p>
+      autocrlf se usa para estandarizar los saltos de linea y el sistema de
+      archivos y carpetas
+    </p>
+    <p>git config -h</p>
+    <p>git help config</p>
+    <p>
+      comandos de ayuda, el primero desde la terminal y el segundo abre una
+      ventana con la documentacion
+    </p>
+    <p>archivo readme.md archivo principal donde va la descripicion</p>
+    <p>
+      .gitignore archivo donde se incluyen los elementos que seran ignorados al
+      subir un proyecto a produccion
+    </p>
+    <p>
+      git init es el comando de inicializacion del repositorio, una vez se este
+      ubicado en la carpeta, es inicia el trackeo de todos los cambios a traves
+      de este comando
+    </p>
+    <p>code . es para abrir la carpeta con el repositorio en vsc</p>
+    <h2>Flujo Basico de Git</h2>
+    <h3>Estados de Git</h3>
+    <ol>
+      <li>Working directory(modified)</li>
+      <li>staging area(staged)</li>
+      <li>commit (commited)</li>
+      <li>Remote</li>
+    </ol>
+    <p>el Working directory es el area de trabajo, la carpeta en si, donde inciamos el repositorio
+      es donde se modificaran, eliminaran o agregaran archivos, por eso es el estado que esta en 
+      constante modificacion. 
+    </p>
+    <p>el Staging area, es el area donde estan los archivos que van a ser confirmados y enviados a HEAD
+      la cabecera del repositorio, en este estado aun pueden ser devueltos al working directory para 
+      una nueva modificacion o para ser confirmados y guardarlos en el repositorio.
+    </p>
+    <p>HEAD, es el estado donde estan confirmados los archivos</p>
+    <p>El estado remoto es cuando ya las carpetas se encuentran en un sistema como github, gitlab, bitbucket</p>
+    <h2>Comandos para trabajar en el flujo basico de Git</h2>
+    <p>git add archivo -> para agregar un elemento al staging</p>
+    <p>git add . -> para agregar mas de un elemento al staging</p>
+    <p>git commit para confirmar un archivo y enviarlo a la cabecera del repositorio
+      al no tener la bandera -m se abrira el editor para definir un mensaje del commit
+    </p>
+    <p>git commit -m para describir en un mensaje de la confirmacion</p>
+  </body>
+</html>

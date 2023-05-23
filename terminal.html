@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Comandos basicos de la terminal CLI</h1>
+    <p>
+      pwd (print work directory): muestra la ruta donde se esta ejecutando la
+      terminal de comandos
+    </p>
+    <p>/ muestra la raiz de la ubicacion</p>
+    <p>GUI graphic user interface (explorador de archivos)</p>
+    <p>whoami: muestro el usuario</p>
+    <p>help: muestra todos los comandos</p>
+    <p>
+      help pwd: muestra ayuda sobre el comando especifico y las banderas (-L -P
+      -W). Tambien funciona, segun el entorno pwd --help o pwd -h
+    </p>
+    <p>
+      con las direccionales up ^ y v down recordamos el historial de comandos
+      escritos
+    </p>
+    <p>Para limpiar la terminal se usa clear</p>
+    <p>
+      para listar los archivos dentro de una carpeta se usa ls, ls -l muestra
+      mas informacion de los archivos, ls -a muestra tambien los archivos
+      ocultos, ls -la muestra archivos detallados y ocultos
+    </p>
+    <p>
+      para cambiar de directorio se usa cd: chage directory, ej: cd
+      otro-directorio
+    </p>
+    <p>Atajos para el comando cd</p>
+    <p>
+      se puede usar tabulador para autocompletar una palabra o extension dentro
+      de una carpeta ej: si dentro del directorio hay un archivo css y nos vamos
+      a mover ahi, se puede escribir cd c y tab, esto buscara los archivos que
+      comiencen con c
+    </p>
+    <p>
+      se puede escribir cd y arrastrar el archivo hasta la terminal, y alli se
+      mostrara la ruta exacta donde esta el archivo
+    </p>
+    <p>cd ~ te regresa al home del usuario inicial</p>
+    <p>cd . te mueve al mismo directorio</p>
+    <p>
+      cd .. lleva al directorio contenedor/padre, es como mover un nivel atras
+      cd ../.. sube dos niveles
+    </p>
+    <p>
+      cd / mueve a la raiz del sistem, al disco duro, en bash cd c -> lleva al
+      disco c cd d -> lleva al disco d cd - -> regresar a la carpeta anterior
+    </p>
+    <p>
+      para entrar en una carpeta que tiene espacios en blanco en su nombre se
+      debe escribir su nombre entre comillas para evitar el error "to many
+      arguments" asi -> cd "program files"
+    </p>
+    <p>
+      comando touch -> para crear un nuevo archivo ej: touch hola-mundo.txt echo
+      "texto" > archivo.txt -> esto tambien crea y guarda una archivo
+    </p>
+    <p>visualizar el contenido de un archivo se usa cat archivo.txt</p>
+    <p>crear una carpeta mkdir ej: mkdir assets</p>
+    <p>eliminar carpetas vacias rmdir ej: rmdir assets</p>
+    <p>
+      rm es para eliminar archivos rm -r elimina directorios con sus archivos rm
+      -rf borra forzosamente directorios y su contenido
+    </p>
+    <p>
+      mv: se usa para mover un archivo mv archivo.txt nombre de la carpeta una
+      variante del comando mv permite renombra archivos ej: mv archivo.txt
+      script.txt se deja asi si va a queda en la misma carpeta
+    </p>
+    <p>
+      copiar un archivo, se usa cp cp archivo.txt ../ copiar y renombrar cp
+      file.txt ../ file1.txt copiar el contenido de una carpeta cp -r js css ->
+      copia todo lo que este en js en css
+    </p>
+    <p>
+      para buscar archivos en la terminal find file find j* todo lo que empiece
+      con j
+    </p>
+    <p>para listar procesos activos se usa ps</p>
+    <p>para matar un proceso, se usa kill kill + id del proceso</p>
+    <p>code abriria un nuevo vsc, funciona con cualquier otro ide</p>
+    <p>
+      crear alias sirve para crear claves para comandos muy largos alias rl="una
+      ruta muy larga que no quiero escribir siempre" luego escribo alias para
+      listar los alias creados escribo el alias rl
+    </p>
+    <p>
+      unalias elimina un alias creado previamente -> unalias nombre del alias al
+      listar los alias ya no estara
+    </p>
+  </body>
+</html>
