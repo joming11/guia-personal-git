@@ -96,5 +96,24 @@
       git branch -M main
       git push -u origin main para subir los archivos
     </p>
+    <p>una vez que los repositorios, local y remoto esten enlazados y se hagan nuevos cambios
+      para subirlos a github se utlizaria solo git push
+      ya no seria necesario colocar -u origin
+    </p>
+    <p>Si se realizara un cambio desde github, para bajarlo al repositorio local
+      se usa git pull
+    </p>
+    <h2>Ramas en git (branch)</h2>
+    <p>todo el desarrollo de un repositorio ocurre en una rama, por lo general es o era la rama
+      master, por tema de inclusion, ahora la rama principal por convencion se llama main
+      para pasar el desarrollo de la rama master a la rama main, hacemos:
+      git branch -m master main
+      -se crea la rama local y se le pasa el historial de la rama master
+      git branch -m master main
+    </p>
+    <p>Se hace un push de la nueva rama principal al repositorio remoto</p>
+    <p>se cambia el HEAD actual a la rama main
+      git symbolic-ref refs/remotes/origin/HEAD refs/remotes/orign/main
+    </p>
   </body>
 </html>
