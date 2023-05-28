@@ -115,5 +115,120 @@
     <p>se cambia el HEAD actual a la rama main
       git symbolic-ref refs/remotes/origin/HEAD refs/remotes/orign/main
     </p>
-  </body>
+    <p>para eliminar la rama master (si se desea) del repositorio remoto
+      git push origin --delete master
+    </p>
+    <p>Todo el cambio de rama se puede evitar colocando desde un principio
+      git branch -M main
+    </p>
+    <h3>Comandos de ayuda</h3>
+    <p>desde la terminal git comando -h</p>
+    <p>desde el navegador git help comando</p>
+    <h2>Ignorar archivos en git</h2>
+    <p>colocados en el archivo .gitignore</p>
+    <h2>Clonar repositorio</h2>
+    <p>se usa el comando git clone https://url.git</p>
+    <h2>Ramas en git (branch)</h2>
+    <p>para crear una rama -> git branch nombre-rama
+      el nombre de la rama debe ser en minusculas, 
+      puede tener numeros y guion medio. no puede ser en 
+      mayusculas ni tener simboloso ni espacios en blanco.
+    </p>
+    <p> git checkout nombre-rama -> para cambiar de rama</p>
+    <p>git checkout -b rama -> para crear una rama y cambiarse a ella</p>
+    <p>git checkout -d rama -> para eliminar una rama</p>
+    <p>git branch -D nombre-rama -> borrar forzosamente una rama</p>
+    <p>git branch -> para listar las ramas</p>
+    <p>git branch --no-merged -> ramas no fusionadas a la rama actual</p>
+    <p>git branch --merged -> ramas fusionadas a la rama actual</p>
+    <p>Rebasar ramas</p>
+    <p>git checkout rama-secundaria</p>
+    <p>git rebase rama-principal</p>
+    <p>Al crear una nueva rama y trabajar en ella, no se podran subir
+      directamente al repositorio remoto, se tendra que usar otro comando push
+      git push -u (--set-upstream) origin nombre-rama
+    </p>
+    <p>git push origin --delete nombre-rama para eliminar una rama del repositorio remoto</p>
+    <h2>Fusionar ramas</h2>
+    <p>para fusionar dos ramas, nos situamos en la que queremos los cambios (el contenido fusionado)</p>
+    <p>ej: git checkout main
+      git merge rama-con-cambios
+    </p>
+    <p>existen dos escenarios principales</p>
+    <p>fast-forward: la fusion se hace automatica, sin conflictos por resolver</p>
+    <p>manual merge: la fusion se debe hacer manualmente para resolver conflictos de duplicacion de contenido
+      ej: el mismo archivo tiene cambios distintos en ramas distintas al fusionar, git no sabe cuales cambios dejar
+      se debe modificar en el archivo en conflicto directamente en el editor para definir cuales cambios se van a subir.
+      github y vsc brinda botones interactivos sobre el codigo para ayudar en estos casos
+      idealmente es preferible hacer estos arreglos antes de hacer un push
+    </p>
+    <p>luego se sube el archivo, git add, git commit, git push</p>
+    <h2>Cambios en los commits</h2>
+    <p>git log -> permite ver el historial de los commits con sus ids</p>
+    <p>git log --online -> permite ver el historial de los commits en una linea</p>
+    <p>(HEAD-> main) cabecera del repositorio local</p>
+    <p>(origin/main, origin/HEAD) cabecera del repositorio remoto</p>
+    <p>se sale de esa lista usando la tecla q</p>
+    <p>git checkout + id de un commit nos lleva a un punto especifico del proyecto</p>
+    <p>si se modifica un archivo, se hace git add . y se hace un commit y nos damos
+      cuenta que hay un error, o se debe agregar algo mas, se corrige el archivo, se hace git add .
+      y no se usa el comando normal del commit, sino -> git commit --amend --no-edit para no crear
+      un nuevo commit, sino, dejar el commit anterior
+    </p>
+    <p>renombrar un commit -> git commit --amend -m "nuevo msj del commit"</p>
+    <p>git reset -hard HEAD-1 -> para eliminar el ultimo commit</p>
+    <h2>Registro de hostorial</h2>
+    <p>inicialmente se puede usar git log -> muestra el historial de commits con su id, fecha y desde que rama fue hecho</p>
+    <p>se puede usar git log --online muestra el historial de commits en una fila</p>
+    <p>se puede usar git log > commits.txt -> crea un archivo que contiene la lista de commits</p>
+    <p>se puede usar git log -n -> se sustituye la n por un numero entero y mostrara los n cambios recientes</p>
+    <p>se puede usar git log --after"año-mes-dia 00:00:00" ->muestra los cambios realizados despues de una fecha determinada</p>
+    <p>se puede usar git log --before"año-mes-dia 00:00:00" ->muestra los cambios realizados antes de una fecha determinada</p>
+    <p>git reflog -> muestra el registro de acciones del log, inserciones, cambios, eliminaciones, fusiones</p>
+    <p>git diff -> para ver diferencias entre el working directory y el staging area</p>
+    <p>git log --online --graph --all -> para ver graficamente el historial</p>
+    <h2>Reseteo del historial</h2>
+    <p>git status ayuda a observar en que estado esta uno o mas archivos</p>
+    <p>git reset permite deshacer un add y tambien un cambio en el HEAD</p>
+    <p>git reset --soft -> elimina el ultimo cambio en HEAD</p> 
+    <p>git reset --mixed -> elimina HEAD y staging</p> 
+    <p>git reset --hard -> elimina HEAD, staging y working directory</p> 
+    <p>git reset id-commit -> elimina todos los cambios despues del commit indicado, preservando los cambios localmente</p> 
+    <p>git reset --hard id-commit -> desecha todo el historial y regresa al commit indicado</p>
+    <h2>Resetear un repositorio completamente</h2>
+    <p>lo primero es posicionarse en la carpeta con el repositorio</p>
+    <p>mv .git/config ~/saved_git_config -> este comando indica tomar el archivo config del archivo oculto .git
+      y guardarlo en la carpeta de usuario inicial con el nombre saved_git_config
+    </p>
+    <p>rm -rf .git -> para borrar el .git</p>
+    <p>git init para inicializar un nuevo repo</p>
+    <p>git branch -M main -> para definir main como la rama principal</p>
+    <p>git add .</p>
+    <p>git commit -m "primer commit"</p>
+    <p>mv ~/saved_git_config .git/config -> comando para traer la configuracion remota</p>
+    <p>git push --forced origin main</p>
+    <h2>Remotos</h2>
+    <p>git remote -> muestra los origenes remotos del repositorio</p>
+    <p>git remote -v -> muestra los origenes remotos con detalle</p>
+    <p>git remote add nombre-origen + https://url -> agregar un origen remoto</p>
+    <p>git remote rename nombre-anterior nombre-nuevo -> renombrar un origen remoto</p>
+    <p>git remote remove nombre-origen -> eliminar un origen remoto</p>
+    <p>git checkout --track -b rama-remota origin/rama-remota -> descargar una rama remota a local diferente a la principal</p>
+    <h2>Etiquetas (Tags) Semver - versionado semantico</h2>
+    <p>git tag -> para listar las etiquetas</p>
+    <p>git tag numero-version -> crea una etiqueta</p>
+    <p>git tag -d numero-version -> para eliminar una etiqueta</p>
+    <p>git show numero-version -> mostrar informacion de una etiqueta</p>
+    <p>sincronizando la etiqueta del repositorio local al remoto
+      git add .
+      git tag  v1.0.0
+      git commit -m "v1.0.0"
+      git push origin numero-version
+    </p>
+    <p>generando una etiqueta anotada (con mensaje de commit)
+      git add .
+      git tag -a "v1.0.0" -m "mensaje de la etiqueta"
+      git push --tags
+    </p>
+   </body>
 </html>
