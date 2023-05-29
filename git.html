@@ -230,5 +230,30 @@
       git tag -a "v1.0.0" -m "mensaje de la etiqueta"
       git push --tags
     </p>
+    <h2>Github Pages</h2>
+    <p>gh-pages es una rama especial para crear un sitio web a tu proyecto alojado directamente en el repositorio de github</p>
+    <p>url del repositorio: https://github.com/usuario/repositorio</p>
+    <p>url del sitio: https://usuario.github.io/repositorio</p>
+    <p>para crear esta rama especial en github ejecutamos los siguientes comandos
+      git branch gh-pages
+      git checkout gh-pages
+      git remote add origin https://url
+      git push origin gh-pages
+    </p>
+    <p>git pull origin gh-pages -> para descargar cambios del repositorio remoto al local</p>
+    <h2>Colaboracion en github</h2>
+    <p>Para poder colaborar en proyectos alojados en github se necesita hacer uso de los forks
+      y pulls requests.
+    </p>
+    <p>primero se debe hacer fork al repositorio en el que se quiere colaborar
+      que no es mas que tener una copia del repositorio en el que se quiere colaborar
+      github brinda la opcion en un boton y consulta si quieres dejar el mismo nombre
+      al repositorio y si solo quieres copiar la rama principal
+    </p>
+    <p>segundo se debe clonar el repositorio para poder manejarlo localmente
+      (tener el repositorio en nuestra computadora)
+      se usa el comando -> git clone + url del repo (posicionados ya en la carpeta donde queremos los archivos)
+    </p>
+    
    </body>
 </html>
